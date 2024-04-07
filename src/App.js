@@ -40,12 +40,15 @@ alert('no data found')
     <>
       <Router>      
           <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+          <hr/>
+          <hr/>
 
         <Routes>
         <Route
           path="/"
           element={<Home recipes={recipes} setDiet={setDiet} diet={diet} cuisine={cuisine} setCuisine={setCuisine} setRecipes={setRecipes} query={query} setQuery={setQuery} healthLabels={healthLabels} setHealthLabels={setHealthLabels} getRecipes={getRecipes} setRecipeId={setRecipeId} />}
-        />        <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>          
+        />   
+             <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>          
           <Route path="/signup" element={<Signup/>} />
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/recipe" element={<RecipeDetail setRecipeId={setRecipeId} recipeId={recipeId}/>} />

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {  createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../firebase'
 import { useNavigate,Link } from "react-router-dom";
+import backgroundImage from "../assets/bg.jpg";
+
 
 const Signup = () => {
     const [email,setEmail]=useState('')
@@ -27,8 +29,12 @@ const Signup = () => {
   });
     }
   return (
-    <div className='w-full flex justify-center items-center'>
-      <div className='container w-[36vw] h-[400px] border-white m-auto border rounded-3xl shadow-xl mt-[5%]'>
+    <div
+    className="bg-cover bg-center h-full"
+    style={{ backgroundImage: `url(${backgroundImage})` }}
+  >
+    <div className='w-full h-screen flex justify-center items-center bg-white bg-opacity-90'>
+      <div className='container bg-white xl:w-[40vw] lg:w-[56vw] md:w-[70vw] w-[90vw]  h-[400px] border-white m-auto border rounded-3xl shadow-xl lg:mt-[5%] mt-[10%]'>
         <div className='flex flex-col justify-center items-center my-10'>
           <h2 className='font-bold text-2xl mb-6'>Sign Up</h2>
      
@@ -43,15 +49,18 @@ const Signup = () => {
               <input value={password} onChange={(e)=>{setPassword(e.target.value)}} className='input border-2 border-gray-400 rounded-xl pl-1 py-1 w-full' type='password' placeholder='New password' />
             </div>
             <div className='flex justify-center items-center mt-6'>
-              <button onClick={()=>{ Signup()}} className='btn bg-[#ff9a33] text-white px-4 py-2 rounded-full w-full'>Sign Up</button>
+              <button onClick={()=>{ Signup()}} className='btn bg-[#ff9a33] text-white px-8 py-2 rounded-full w-full'>Sign Up</button>
             </div>
-            <p>Don't have an account?</p>
-            <Link to='/login' className='flex justify-center items-center mt-6'>
-              <button  className='btn bg-[#ff9a33] text-white px-4 py-2 rounded-full w-full'>Login</button>
+            <p className='mt-5 text-base'>Don't have an account?<span className='text-[#ff9a33] underline cursor-pointer ml-3'>
+            <Link to='/login' className=''>Login
+            </Link>  </span></p>
+          
+             
        
-        </Link>
+       
         </div>
       </div>
+    </div>
     </div>
   );
 };

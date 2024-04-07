@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";// TODO: Add SDKs for Firebase products 
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBveE6kWh6k_yWkZQZT_9QzRiUwF37acQo",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "recipe-finder-f5af4.firebaseapp.com",
   projectId: "recipe-finder-f5af4",
   storageBucket: "recipe-finder-f5af4.appspot.com",

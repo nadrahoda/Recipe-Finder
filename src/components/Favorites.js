@@ -44,32 +44,28 @@ const Favorites = () => {
 
   return (
     <>
-      <div>
-        {favFood.map((data) => (
-          <div key={data.docId}>
-            <p>{data.title}</p>
-            <p>time to cook: {data.time}</p>
-            <img src={data.img} alt={data.title} />
-            <button
-              onClick={() => DeleteData(data.docId)}
-              className='bg-red-600 text-white rounded-3xl p-2 mt-2'
-            >
-              Remove from Fav
-            </button>
-            <button onClick={()=>{localStorage.setItem('RECIPE_NAME',data.id)}}  className="border-black rounded-full border px-3 py-1 mt-6">
+    <div className='mt-10'>
 
-<Link to="/recipe" >
-
-
-   View Details
-
-
-
-  </Link>
-  </button>
+       <div className="md:grid-cols-2  xl:grid-cols-4 lg:grid-cols-3 grid-cols-1 3xl:grid-cols-5 grid gap-3 p-4">
+      {favFood.map((data) => (
+        <div key={data.docId} className="bg-white rounded-lg overflow-hidden shadow-md">
+          <img src={data.img} alt={data.title} className="w-full h-80 object-cover" />
+          <div className="p-4">
+            <h3 className="text-xl font-semibold">{data.title}</h3>
+            <p className="text-gray-500 mb-2">Time to Cook: {data.time}</p>
+            <div className="flex justify-between">
+              <button onClick={() => DeleteData(data.docId)} className="bg-red-600 text-white rounded-md px-4 py-2">
+                Remove
+              </button>
+              <Link to="/recipe" onClick={() => localStorage.setItem('RECIPE_NAME', data.id)} className="border-black rounded-full border px-4 py-2">
+                View Details
+              </Link>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
+    </div>
     </>
   );
 };
