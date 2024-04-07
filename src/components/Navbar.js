@@ -7,28 +7,25 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    // Check if user is logged in when component mounts
     const user = localStorage.getItem("USER");
-    setIsLoggedIn(!!user); // Set isLoggedIn to true if user exists in localStorage
+    setIsLoggedIn(!!user);
   }, []);
 
   const handleLogout = () => {
-    // Clear user from localStorage
     localStorage.removeItem("USER");
-    // Update isLoggedIn state to false
+
     setIsLoggedIn(false);
-    // Display logout message (optional)
+
     alert("Logged out successfully");
   };
 
   const handleLogin = () => {
-    // Perform login logic (e.g., set user in localStorage)
     localStorage.setItem("USER", "exampleUser");
-    // Update isLoggedIn state to true
+
     setIsLoggedIn(true);
   };
   const handleMenuItemClick = () => {
-    setIsMenuOpen(false); // Close the menu when any menu item is clicked
+    setIsMenuOpen(false);
   };
 
   return (

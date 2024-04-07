@@ -90,10 +90,8 @@ const RecipeDetail = () => {
               {ingredients.extendedIngredients.map((ingredient, index) => (
                 <div key={index} className="">
                   <div className="flex space-x-3">
-                    {/* <h3>{ingredient.name}</h3> */}
                     <h3> {ingredient.original}</h3>
                     <span></span>
-                    {/* <h3>( {ingredient.measures.metric.amount}g)</h3> */}
                   </div>
                 </div>
               ))}
@@ -130,28 +128,6 @@ const RecipeDetail = () => {
           </div>
         </div>
       </div>
-
-      {/* {localStorage.getItem('USER')==null?
-        <Link to='/login' className='bg-red-500 text-white rounded-3xl p-2'>Add to favorites</Link>:
-        <button onClick={()=>{ AddFavtoDB()}}  className='bg-red-500 text-white rounded-3xl p-2'>Add to favorites</button>
-
-  }
-      <div>Title: {ingredients.title}</div>
-      <div>Time: {ingredients.readyInMinutes}</div>
-      <div>Servings: {ingredients.servings}</div>
-      <img src={ingredients.image} alt={ingredients.title} />
-      <div>Instructions: {ingredients.instructions}</div>
-      <div>Rating: {ingredients.spoonacularScore && ingredients.spoonacularScore.toFixed(0)}</div>
-      <div>Diet Type: {ingredients.diets && ingredients.diets.join(', ')}</div>
-      <div>
-        {ingredients.extendedIngredients.map((ingredient, index) => (
-          <div key={index}>
-            <h3>Name: {ingredient.name}</h3>
-            <h3>Quantity: {ingredient.measures.metric.amount}g</h3>
-            <h3>Ingredient: {ingredient.original}</h3>
-          </div>
-        ))}
-      </div> */}
     </>
   );
 };

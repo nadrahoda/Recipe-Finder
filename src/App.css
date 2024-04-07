@@ -1,18 +1,15 @@
-
-
-.app{
+.app {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 40px 24px;
 }
-.searchbox{
+.searchbox {
   margin-top: 18px;
-
 }
 
-.submit{
+.submit {
   padding: 6px 16px;
   font-size: 15px;
   margin-left: 6px;
@@ -21,14 +18,12 @@
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  
+
   margin-top: 16px;
   text-align: center;
   font-weight: 500;
-
-
 }
-.submit:hover{
+.submit:hover {
   padding: 6px 16px;
   font-size: 15px;
   margin-left: 6px;
@@ -37,12 +32,9 @@
   border-radius: 4px;
   color: #ff9a33;
   cursor: pointer;
-
-
 }
 
-.health{
+.health {
   padding: 7px 8px;
   margin-left: 6px;
-
 }
