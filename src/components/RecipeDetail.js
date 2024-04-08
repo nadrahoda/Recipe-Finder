@@ -102,19 +102,25 @@ const RecipeDetail = () => {
             </div>
 
             {localStorage.getItem("USER") == null ? (
-              <Link
-                to="/login"
-                className="block bg-red-500 text-white rounded-3xl  mt-6 text-xs px-6 py-3 text-center font-medium"
-              >
-                Add to favorites{" "}
-              </Link>
+              <div className="flex space-x-4">
+                <Link to="/login" className="">
+                  <button className="block bg-red-500 text-white rounded-3xl  mt-6 text-xs px-6 py-3 text-center font-medium">
+                    {" "}
+                    Add to favorites{" "}
+                  </button>
+                </Link>{" "}
+             
+              </div>
             ) : (
-              <button
-                onClick={AddFavtoDB}
-                className="block bg-red-500 text-white rounded-3xl  mt-6 text-xs px-6 py-3 text-center font-medium"
-              >
-                Add to favorites
-              </button>
+              <div className="flex space-x-4">
+                <button
+                  onClick={AddFavtoDB}
+                  className="block bg-red-500 text-white rounded-3xl  mt-6 text-xs px-6 py-3 text-center font-medium"
+                >
+                  Add to favorites
+                </button>
+               
+              </div>
             )}
           </div>
           <div className="w-full lg:w-1/2 ">

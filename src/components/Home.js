@@ -49,7 +49,10 @@ const Home = ({
             <h3 className="text-[#ff9a33] text-lg font-semibold mt-4 flex justify-center">
               Select your preferences:
             </h3>
-            <div className="flex justify-center items-center">
+            <div className="flex md:flex-row flex-col  justify-center items-center">
+              <div className="flex justify-center mt-6 space-x-10 font-semibold text-orange-500 pr-4">
+          Diet:
+              </div>
               <div className="flex justify-center mt-6 space-x-10">
                 <select
                   className="health rounded-lg border"
@@ -68,14 +71,17 @@ const Home = ({
                   <option value="Whole30">Whole30</option>
                 </select>
               </div>
+              <div className="flex justify-center mt-6 space-x-10 font-semibold text-orange-500 pl-3 pr-2">
+          Cuisine:
+              </div>
               <div className="flex justify-center mt-6 space-x-10">
                 <select
                   className="health rounded-lg border"
                   value={cuisine}
                   onChange={(e) => setCuisine(e.target.value)}
                 >
-                  <option value="African">African</option>
                   <option value="Asian">Asian</option>
+                  <option value="African">African</option>
                   <option value="American">American</option>
                   <option value="British">British</option>
                   <option value="Cajun">Cajun</option>
@@ -118,6 +124,8 @@ const Home = ({
               setRecipeId={setRecipeId}
               recipeId={recipeId}
               recipe={recipe}
+              diet = {diet}
+              cuisine={cuisine}
             />
           </div>
         ))}

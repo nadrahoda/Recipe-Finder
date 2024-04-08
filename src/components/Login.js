@@ -16,7 +16,7 @@ const Login = ({ setIsLoggedIn }) => {
         // Signed in
         const user = userCredential.user;
         console.log("logged in" + user);
-        alert("logged in succesfully");
+        alert("Logged in succesfully");
         localStorage.setItem("USER", email);
         setIsLoggedIn(true);
         navigate("/");

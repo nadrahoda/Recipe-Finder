@@ -13,8 +13,8 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
   const [healthLabels, setHealthLabels] = useState("vegan");
-  const [diet, setDiet] = useState("");
-  const [cuisine, setCuisine] = useState("");
+  const [diet, setDiet] = useState("Vegetarian");
+  const [cuisine, setCuisine] = useState("Asian");
 
   const getRecipes = async () => {
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${query}&diet=${diet}&cuisine=${cuisine}`;

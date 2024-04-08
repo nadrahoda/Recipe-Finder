@@ -4,7 +4,7 @@ import "../index.css";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Homepage = ({ recipe, setRecipeId, recipeId }) => {
+const Homepage = ({ recipe, setRecipeId, recipeId, diet, cuisine }) => {
   console.log(recipe);
   return (
     <>
@@ -20,9 +20,10 @@ const Homepage = ({ recipe, setRecipeId, recipeId }) => {
           </p>
           <hr />
           <div className="flex justify-between text-xs items-center py-2 ">
-            <p className="text-center pl-2">Diet</p>
-            <p className="text-center pl-2">Cuisine</p>
-            <p className="text-center pr-6">Serving</p>
+          <p className="text-center pl-2">Details:</p>
+            <p className="text-center pl-2">{diet}</p>
+            <p className="text-center pr-6">{cuisine}</p>
+            
           </div>
 
           <hr />
@@ -30,7 +31,7 @@ const Homepage = ({ recipe, setRecipeId, recipeId }) => {
             onClick={() => {
               localStorage.setItem("RECIPE_NAME", recipe.id);
             }}
-            className="w-full flex justify-center items-center rounded-b-lg py-3 bg-orange-500"
+            className="w-full flex justify-center items-center rounded-b-lg py-3 bg-orange-500 cursor-pointer"
           >
             <button className="text-white font-medium text-base">
               {" "}
